@@ -3,11 +3,27 @@ import numpy as np
 #import os
 im2disp = cv2.imread('C:/Users/...')
 
-" Putting + sign to the image "
+# Putting + sign to the image 
+
 height,width=im2disp.shape[0:2]
 im2disp[:,int(width/2-1):int(width/2+1)]=0
 im2disp[int(height/2-1):int(height/2+1),:]=0
 
-cv2.imshow('',im2disp)
+# Seperating the RGB color elements
+
+red=im2disp[:,:,0]
+green=im2disp[:,:,1]
+blue=im2disp[:,:,2]
+
+original=np.zeros((height,width,3),dtype=np.uint8)
+original[:,:,0]=red
+original[:,:,1]=green
+original[:,:,2]=blue
+
+cv2.imshow('Combined',original)
+cv2.imshow('Red',red)
+cv2.imshow('Green',green)
+cv2.imshow('Blue',blue)
+cv2.imshow('Plus Sign',im2disp)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
