@@ -1,0 +1,5 @@
+import cv2
+im2disp = cv2.imread('C:/Users/...') "copy and paste the directory of your target image"
+cv2.imshow('',im2disp)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
