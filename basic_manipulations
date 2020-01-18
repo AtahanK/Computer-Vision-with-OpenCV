@@ -1,0 +1,13 @@
+import cv2
+import numpy as np
+#import os
+im2disp = cv2.imread('C:/Users/...')
+
+" Putting + sign to the image "
+height,width=im2disp.shape[0:2]
+im2disp[:,int(width/2-1):int(width/2+1)]=0
+im2disp[int(height/2-1):int(height/2+1),:]=0
+
+cv2.imshow('',im2disp)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
